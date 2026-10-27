@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(59, 130, 246, 0.2), transparent 38%),
+    linear-gradient(135deg, #0b1120, #111827 55%, #1e293b);
+  color: #f8fafc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contador {
+  width: min(100%, 440px);
+  padding: 42px 34px 36px;
+  text-align: center;
+  background: rgba(17, 24, 39, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+.etiqueta {
+  margin: 0 0 12px;
+  color: #60a5fa;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 6vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.descricao {
+  margin: 12px 0 28px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.numero {
+  display: block;
+  margin: 0 auto 30px;
+  color: #fff;
+  font-size: clamp(4.5rem, 20vw, 7rem);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.botao {
+  width: 68px;
+  height: 58px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  color: white;
+  font: inherit;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.botao:hover {
+  transform: translateY(-2px);
+}
+
+.botao:active {
+  transform: translateY(0);
+}
+
+.botao:focus-visible {
+  outline: 3px solid #e0f2fe;
+  outline-offset: 4px;
+}
+
+.botao-diminuir {
+  background: #334155;
+}
+
+.botao-diminuir:hover {
+  background: #475569;
+}
+
+.botao-aumentar {
+  background: #2563eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.28);
+}
+
+.botao-aumentar:hover {
+  background: #3b82f6;
+}
+
+@media (max-width: 420px) {
+  .contador {
+    padding: 34px 22px 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
