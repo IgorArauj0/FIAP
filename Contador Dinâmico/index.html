@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Contador Dinâmico</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <main class="contador" aria-labelledby="titulo">
         <p class="etiqueta">CONTADOR DINÂMICO</p>
@@ -16,11 +18,26 @@
         <output id="numero" class="numero" aria-live="polite">0</output>
 
         <div class="controles" aria-label="Controles do contador">
-            <button class="botao botao-diminuir" type="button" onclick="diminuir()" aria-label="Diminuir contador">−</button>
-            <button class="botao botao-aumentar" type="button" onclick="aumentar()" aria-label="Aumentar contador">+</button>
+            <button class="botao botao-diminuir" type="button" onclick="diminuir()"
+                aria-label="Diminuir contador">−</button>
+            <button class="botao botao-aumentar" type="button" onclick="aumentar()"
+                aria-label="Aumentar contador">+</button>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        let contador = 0;
+
+        function aumentar() {
+            contador++;
+            document.getElementById("numero").innerText = contador;
+        }
+
+        function diminuir() {
+            contador--;
+            document.getElementById("numero").innerText = contador;
+        }
+    </script>
 </body>
+
 </html>

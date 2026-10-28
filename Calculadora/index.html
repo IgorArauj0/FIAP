@@ -1,34 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora Dark</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="calculadora">
-      <h2>Calculadora</h2>
 
-      <div class="entrada">
-        <input type="number" id="n1" placeholder="Número 1" />
-        <input type="number" id="n2" placeholder="Número 2" />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Dark</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <div class="botoes">
-        <button onclick="somar()">Somar</button>
-        <button onclick="subtrair()">Subtrair</button>
-        <button onclick="multiplicar()">Multiplicar</button>
-      </div>
+<body>
+  <main class="calculadora">
+    <h2>Calculadora</h2>
 
-      <div class="botoes botoes-duplos">
-        <button onclick="dividir()">Dividir</button>
-        <button onclick="limpar()">Limpar</button>
-      </div>
+    <div class="entrada">
+      <input type="number" id="n1" placeholder="Número 1" />
+      <input type="number" id="n2" placeholder="Número 2" />
+    </div>
 
-      <p id="resultado">Resultado: </p>
-    </main>
+    <div class="botoes">
+      <button onclick="somar()">Somar</button>
+      <button onclick="subtrair()">Subtrair</button>
+      <button onclick="multiplicar()">Multiplicar</button>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div class="botoes botoes-duplos">
+      <button onclick="dividir()">Dividir</button>
+      <button onclick="limpar()">Limpar</button>
+    </div>
+
+    <p id="resultado">Resultado: </p>
+  </main>
+
+  <script>
+    function somar() {
+      let n1 = Number(document.getElementById('n1').value);
+      let n2 = Number(document.getElementById('n2').value);
+
+      let resultado = n1 + n2;
+      document.getElementById('resultado').innerText = 'Resultado da soma: ' + resultado;
+    }
+
+    function subtrair() {
+      let n1 = Number(document.getElementById('n1').value);
+      let n2 = Number(document.getElementById('n2').value);
+
+      let resultado = n1 - n2;
+      document.getElementById('resultado').innerText = 'Resultado da subtração: ' + resultado;
+    }
+
+    function multiplicar() {
+      let n1 = Number(document.getElementById('n1').value);
+      let n2 = Number(document.getElementById('n2').value);
+
+      let resultado = n1 * n2;
+      document.getElementById('resultado').innerText = 'Resultado da multiplicação: ' + resultado;
+    }
+
+    function dividir() {
+      let n1 = Number(document.getElementById('n1').value);
+      let n2 = Number(document.getElementById('n2').value);
+
+      if (n2 === 0) {
+        document.getElementById('resultado').innerText = 'Erro: não é possível dividir por zero.';
+        return;
+      }
+
+      let resultado = n1 / n2;
+      document.getElementById('resultado').innerText = 'Resultado da divisão: ' + resultado;
+    }
+
+    function limpar() {
+      document.getElementById('n1').value = '';
+      document.getElementById('n2').value = '';
+      document.getElementById('resultado').innerText = 'Resultado: ';
+      document.getElementById('n1').focus();
+    }
+  </script>
+</body>
+
 </html>
